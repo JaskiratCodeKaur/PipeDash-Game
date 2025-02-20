@@ -1,12 +1,9 @@
 	/*
 		CSS Stylesheet
 		Author: Jaskirat Kaur
-		Student ID: 000904397
 		Date: 31 July, 2023
-		
 		It consist of styling my game and further innovating the structure of game page.
 	*/	
-		
 		*{
 			margin: 0;
 			padding: 0;
@@ -14,10 +11,7 @@
 		.instructions{
 			text-align: center;
 		}
-		
-		
-		
-		
+
 		#centerhead{
 			text-align: center;
 		}
@@ -32,16 +26,14 @@
 			margin-top: 400px;
 		}
         
-		
 		.game{
 			display: flex;
 		}
-		
-		
-		
+	
 		.text {
 		  font-family: 'Press Start 2P', cursive;
 		}
+
 		#svg {
 		  position: absolute;
 		  top: 0;
@@ -60,6 +52,7 @@
 		  border-radius: 5px;
 		  box-sizing: border-box;
 		}
+
 		#startButton {
 			position: absolute;
 			top: 470px;
@@ -74,10 +67,7 @@
 			border-radius: 5px;
 			box-sizing: border-box;
 		}
-		
-		
-		
-
+	
 		.container.game-container {
 		  display: flex;
 		  flex-direction: column;
@@ -89,14 +79,12 @@
 		  flex-direction: column;
 		}
 
-	
 		.image,
 		.instructions {
 		  border: 1px solid #ccc;
 		  padding: 10px;
 		  margin: 5px;
 		}
-
 
 		.instructions {
 		  flex: 1;
@@ -111,7 +99,6 @@
 		  text-align: center;
 		}
  
-
 		#inst{
 			margin-left: 20px;
 		}
@@ -138,19 +125,16 @@
 			width: 50%;
 			height: 200px; 
 		  }
-
 		 
 		  #ball {
 			cx: 50%;
 			cy: 50%;
 		  }
 
-		  
 		  .text {
 			font-size: 14pt;
 		  }
 
-		  
 		  .game-container {
 			padding: 10px;
 		  }

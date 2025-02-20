@@ -1,10 +1,7 @@
-/*   Javascript Author: Jaskirat Kaur Student ID: 000904397 Date: 31 July, 2023
-
+/*   Javascript Author: Jaskirat Kaur Date: 31 July, 2023
 		The file consist of function that creates the pipes for my game, bounce the ball, 
 		stop the mottion of both ball and pipes as the ball collides with pipes,and display the scores at the end.
 		It handles the whole functioning of the game.-Animation,creation , stopping animation.
-
-
 */
 			/* For tracking the score of player*/
 			let score = 0;
@@ -37,7 +34,6 @@
 			const svgWidth = 800;
 			const svgHeight = 700;
 			
-			
 			let lastPipeX = svgWidth;
 
 			/*For the game running*/
@@ -49,8 +45,6 @@
 			const svgContainer = document.getElementById("game-svg");
 
 			const ball = document.getElementById('ball');
-
-					
 			const startButton = document.getElementById("startButton");
 			const playerNameInput = document.getElementById("textInput");
 			const headerText = document.querySelector("h1.text-center");
@@ -59,7 +53,6 @@
 			*This is the event listenser added to start button 
 			*which display the main game onclicking the start button.
 			*/
-
 			startButton.addEventListener("click", () => {
 			  const playerName = playerNameInput.value.trim();
 			  if (playerName !== "") {
@@ -77,13 +70,11 @@
 			  }
 			});
 			
-			
 		
 			/* To update the position and velocity of ball in the game.
 			*checks for collisions with the boundaries of the game container and calls the function checkCollisions()
 			* checkCollisions() function to detect collisions with the pipes.
 			*/
-
 			function ballUpdate() {
 				if(gameRunning){
 				  velocity += gravity;
@@ -105,8 +96,6 @@
 				}
 			  
 			}
-			
-		
 		
 			/*To detect the collision of the ball with the upper and lower pipe in the game. 
 			*If collision occurs, the game call the function handleCollision() for ending the game and displaying the scores.
@@ -125,7 +114,7 @@
 				const lowerPipeY = parseFloat(pipe.lower.getAttribute('y'));
 				const lowerPipeHeight = parseFloat(pipe.lower.getAttribute('height'));
 
-				// To check  inhe ball tersection with the upper pipe
+				// To check in ball intersection with the upper pipe
 				if (
 				  ballX + ballRadius > upperPipeX &&
 				  ballX - ballRadius < upperPipeX + pipeWidth &&
@@ -149,7 +138,6 @@
 			  }
 			}
 
-
 			/*This is the function  to handle collision and stop the game
 			* It displays the text game over along with scores of player and stop the animation of moving pipes.
 			*/
@@ -157,7 +145,6 @@
 			  gameRunning = false;
 			  pipesMoving = false;
 			
-				
 			  // Stop the animation of moving pipes
 			  cancelAnimationFrame(movePipes);
 			  
@@ -197,7 +184,6 @@
 			  velocity += lift;
 			}
 			
-			
 			/*
 			*This is the event listener added in game to have keyboard event that controls ball movement.
 			*/
@@ -207,7 +193,6 @@
 			  }
 			});
 			
-			
 			/*
 			*To start the game loop of the ball 
 			*/
@@ -215,7 +200,6 @@
 			  ballUpdate();
 			  requestAnimationFrame(gameLoop); 
 			}
-			
 			
 			/*
 			* This  functionis to create the pair of pipes with gap in between 
@@ -225,8 +209,7 @@
 			function createPipePair() {
 			  const upperPipeHeight = Math.random() * 200 + 100;
 			  const lowerPipeHeight = svgHeight - upperPipeHeight - pipeGap;
-			  
-			  
+			
 			  // for the upper pipe
 			  const upperPipe = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
 			  upperPipe.setAttribute('class', 'pipe');
@@ -235,7 +218,6 @@
 			  upperPipe.setAttribute('width', pipeWidth);
 			  upperPipe.setAttribute('height', upperPipeHeight);
 			  svgContainer.appendChild(upperPipe);
-			
 			
 			  // for the lower pipe
 			  const lowerPipe = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
@@ -257,8 +239,6 @@
 			  }
 			}
 			
-			
-			
 			/*
 			*The function is for animating the movement of pipes in the game.
 			*It also creates new pipes at random intervals to maintain the flow of the pipes.
@@ -279,8 +259,6 @@
 					pipe.lower.remove();
 				  }
 				}
-				
-				
 				// to randomly generate new pipe pairs at a rate of approximately 0.02 (2%) chance per frame
 				if (gameRunning && Math.random() < 0.02) {
 				  createPipePair();
@@ -289,7 +267,5 @@
 				requestAnimationFrame(movePipes);
 			  }
 			}
-
 			// to request the next frame to continue the animation
-
 			requestAnimationFrame(movePipes);
