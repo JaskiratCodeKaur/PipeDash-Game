@@ -1,0 +1,161 @@
+	/*
+		CSS Stylesheet
+		Author: Jaskirat Kaur
+		Student ID: 000904397
+		Date: 31 July, 2023
+		
+		It consist of styling my game and further innovating the structure of game page.
+	*/	
+		
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.instructions{
+			text-align: center;
+		}
+		
+		
+		
+		
+		#centerhead{
+			text-align: center;
+		}
+		
+		#ball{
+			animation-name: bounceball;
+            animation-iteration-count: infinite;
+            animation-duration: 3s;
+		}
+		#score{
+			font-size: 30pt;
+			margin-top: 400px;
+		}
+        
+		
+		.game{
+			display: flex;
+		}
+		
+		
+		
+		.text {
+		  font-family: 'Press Start 2P', cursive;
+		}
+		#svg {
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		}
+		
+		#textInput {
+		  position: absolute;
+		  top: 330px;
+		  left: 650px;
+		  width: 200px;
+		  height: 40px;
+		  padding: 5px;
+		  font-size: 16px;
+		  border: 2px solid #ccc;
+		  border-radius: 5px;
+		  box-sizing: border-box;
+		}
+		#startButton {
+			position: absolute;
+			top: 470px;
+			left: 680px;
+			width: 150px;
+			height: 70px;
+			padding: 20px;
+			font-size: 16px; 
+			background-color: green; 
+			color: white; 
+			border: none; 
+			border-radius: 5px;
+			box-sizing: border-box;
+		}
+		
+		
+		
+
+		.container.game-container {
+		  display: flex;
+		  flex-direction: column;
+		}
+
+		.col-md-4,
+		.col-md-8 {
+		  display: flex;
+		  flex-direction: column;
+		}
+
+	
+		.image,
+		.instructions {
+		  border: 1px solid #ccc;
+		  padding: 10px;
+		  margin: 5px;
+		}
+
+
+		.instructions {
+		  flex: 1;
+		  padding: 20px;
+		  border: 1px solid #ccc;
+		}
+		
+		footer {
+		  border: 1px solid black;
+		  background-color: #f8f9fa; 
+		  padding: 10px; 
+		  text-align: center;
+		}
+ 
+
+		#inst{
+			margin-left: 20px;
+		}
+		
+		.game {
+			background-color: green;
+			width: 100%;
+			height: 75%;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.box {
+		  border: 1px solid #ccc;
+		  
+		}
+		
+		@media (max-width: 320px) {
+		   .start-screen{
+			   width: 50%;
+		   }
+		  
+		  #game-svg {
+			width: 50%;
+			height: 200px; 
+		  }
+
+		 
+		  #ball {
+			cx: 50%;
+			cy: 50%;
+		  }
+
+		  
+		  .text {
+			font-size: 14pt;
+		  }
+
+		  
+		  .game-container {
+			padding: 10px;
+		  }
+
+		  .instructions {
+			margin-top: 10px;
+		  }
+		}
